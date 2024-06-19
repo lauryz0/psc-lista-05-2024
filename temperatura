@@ -1,0 +1,28 @@
+import java.util.Scanner;
+public class Temperatura {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        double[] temperaturas = new double[12];
+        double somaTemperaturas = 0; 
+        System.out.println("Digite 12 temperaturas:");
+
+        for (int i = 0; i < 12; i++) {
+            System.out.print("Temperatura " + (i + 1) + ": ");
+            temperaturas[i] = scanner.nextDouble();
+
+           
+            if (temperaturas[i] < 4 || temperaturas[i] > 10) {
+                System.out.println("A temperatura deve estar entre 4 e 10 graus.");
+                i--; 
+            } else {
+                somaTemperaturas += temperaturas[i];
+            }
+        }
+
+        double mediaTemperaturas = somaTemperaturas / 12;
+
+     
+        System.out.println("\nA temperatura média aferida no dia foi de " + mediaTemperaturas + "° C");
+        scanner.close();
+    }
+}
